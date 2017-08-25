@@ -23,6 +23,6 @@ RUN apk update && \
     add 1.12.1.jar ./
 RUN mapcrafter_textures.py ./1.12.1.jar usr/local/share/mapcrafter/textures
     add render.conf ./
-
-    # ENTRYPOINT ["mapcrafter"]
+    add mapgen.sh ./
+    ENTRYPOINT ["mapgen.sh"]
     

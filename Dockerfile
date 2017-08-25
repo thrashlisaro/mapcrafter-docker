@@ -4,7 +4,7 @@ ENV LC_All=C
 
 RUN apk update \
     apk upgrade \
-    apk add ---no-cache git libpng libpng-dev libjpeg-turbo libjpeg-turbo-dev \
+    apk add --no-cache   git libpng libpng-dev libjpeg-turbo libjpeg-turbo-dev \
                          boost-system boost-dev boost-program_options boost-iostreams \
                          make gcc g++ musl-dev cmake zlib-dev && \
     cd /tmp && \

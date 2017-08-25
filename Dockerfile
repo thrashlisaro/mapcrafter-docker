@@ -2,11 +2,11 @@ FROM alpine
 
 ENV LC_All=C
 
-RUN apk update \
-    apk upgrade \
-    apk add ---no-cache git libpng libpng-dev libjpeg-turbo libjpeg-turbo-dev \
-                         boost-system boost-dev boost-program_options boost-iostreams \
-                         make gcc g++ musl-dev cmake zlib-dev && \
+RUN apk update && \
+    apk upgrade && \
+    apk add --no-cache git libpng libpng-dev libjpeg-turbo libjpeg-turbo-dev \
+            boost-system boost-dev boost-program_options boost-iostreams \
+            make gcc g++ musl-dev cmake zlib-dev && \
     cd /tmp && \
     git clone https://github.com/mapcrafter/mapcrafter.git --depth=1 && \
     cd mapcrafter && \
@@ -20,6 +20,8 @@ RUN apk update \
 
     VOLUME /worlds
     VOLUME /output
+    
+    add render.conf ./
 
     ENTRYPOINT ["mapcrafter"]
     
